@@ -758,17 +758,7 @@
             rootMargin: "0px 0px -100px 0px"
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const skillBars = entry.target.querySelectorAll('.skill-bar');
-                    skillBars.forEach(bar => {
-                        bar.style.width = bar.getAttribute('data-width');
-                    });
-                }
-            });
-        }, observerOptions);
-
+       
         // Observe skills section
         const skillsSection = document.querySelector('#about');
         if (skillsSection) observer.observe(skillsSection);
